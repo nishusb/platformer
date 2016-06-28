@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Platformer</title>
+        <link rel="icon" href="favicon.png">
+        <link rel="stylesheet" href="theme.css">
+        <style>
+            #info {
+                background: #666;
+                color: #FFF;
+                padding: 10px;
+            }
+            #info:before {
+                display: block;
+                content: "Game Info";
+                color: #DDD;
+                text-align: center;
+                font-size: 15px;
+            }
+            #lvlSel {
+                background: #222;
+            }
+            #lvlSel:before {
+                display: block;
+                content: "Level Select";
+                color: #DDD;
+                text-align: center;
+                padding: 10px;
+                font-size: 15px;
+            }
+            #colSel {
+                background: #444;
+            }
+            #colSel:before {
+                display: block;
+                content: "Player Color Select";
+                color: #DDD;
+                text-align: center;
+                padding: 10px;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body onresize="sizeWindow()">
+        <canvas id="game" width="0" height="0" style="transition: 200ms"></canvas>
+        <div id="overlay">
+            <div id="menu">
+                <h1>Menu</h1>
+                <div id="info">
+                    v3.7 [Beta Build 2]<br><br>
+                    
+                    Yay! Game is almost done now... Be waiting for littlebit longer...
+                </div>
+                <div id="colSel">
+                    <div class="mbi" style="background: #F20" onclick="colorSet('#F20')">
+                        Red
+                    </div>
+                    <div class="mbi" style="background: #F50" onclick="colorSet('#F50')">
+                        Orange
+                    </div>
+                    <div class="mbi" style="background: #FD0" onclick="colorSet('#FD0')">
+                        Yellow
+                    </div>
+                    <div class="mbi" style="background: #2F7" onclick="colorSet('#2F7')">
+                        Green
+                    </div>
+                    <div class="mbi" style="background: #3CF" onclick="colorSet('#3CF')">
+                        Blue
+                    </div>
+                    <div class="mbi" style="background: #A0A" onclick="colorSet('#A0A')">
+                        Purple
+                    </div>
+                    <div class="mbi" style="background: gray" onclick="colorSet('#777')">
+                        Gray
+                    </div>
+                </div>
+                <div id="lvlSel">
+                    <div class="mbi" style="background: red" onclick="easterEgg()">
+                        RANDOM MENU ITEM...
+                    </div>
+                    <div class="mbi" style="background: orange" onclick="player.setLevel(1)">
+                        Level 1
+                    </div>
+                    <div class="mbi" style="background: yellow" onclick="player.setLevel(2)">
+                        Level 2
+                    </div>
+                    <div class="mbi" style="background: green" onclick="player.setLevel(3)">
+                        Level 3
+                    </div>
+                    <div class="mbi" style="background: blue" onclick="player.setLevel(4)">
+                        Level 4
+                    </div>
+                    <div class="mbi" style="background: purple" onclick="player.setLevel(5)">
+                        Level 5
+                    </div>
+                    <div class="mbi" style="background: #333" onclick="player.setLevel(6)">
+                        Level 6
+                    </div>
+                    <div class="mbi" style="background: brown" onclick="player.setLevel(7)">
+                        Level 7
+                    </div>
+                    <div class="mbi" style="background: maroon" onclick="player.setLevel(8)">
+                        Level 8
+                    </div>
+                    <div class="mbi" style="background: crimson" onclick="player.setLevel(9)">
+                        Level 9
+                    </div>
+                    <div class="mbi" style="background: aqua" onclick="player.setLevel(10)">
+                        Level 10
+                    </div>
+                    <div class="mbi" style="background: lightgreen" onclick="player.setLevel(11)">
+                        Level 11
+                    </div>
+                    <div class="mbi" style="background: gray" onclick="player.setLevel(12)">
+                        Level 12
+                    </div>
+                    <div class="mbi" style="background: gray" onclick="player.setLevel(13)">
+                        Level 13
+                    </div>
+                    <div class="mbi" style="background: gray" onclick="player.setLevel(14)">
+                        Level 14
+                    </div>
+                    <div class="mbi" style="background: gray" onclick="player.setLevel(15)">
+                        Level 15
+                    </div>
+                </div>
+            </div>
+            <p style="color: white; text-align: center;">This is the level menu, blah blah <a onclick="alert('Easter Egg Code: iNiV9821')">blah</a>...</p>
+        </div>
+        <script src="gamesource.js"></script>
+        <script>function easterEgg() {
+            //Wow! I am so good at hiding secret code from people!
+            if (prompt('Easter egg code?') === 'iNiV9821') {
+                alert('Im working on the egg still...');
+            } else {
+                for (var a = 0; a < 25; a += 1) {
+                    postToBoard('THE SHAME!!! KILL HIM!');
+                }
+                player.die();
+            }
+        }</script>
+    </body>
+</html>

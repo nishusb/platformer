@@ -1,0 +1,54 @@
+html {
+    margin: 0px;
+    height: 100%;
+} body {
+    margin: 0px;
+    height: 100%;
+    font-family: "Trebuchet MS";
+    background-color: white;
+} #game {
+    opacity: 0;
+    background-color: lightgray;
+    /*vertical-align: bottom;*/
+    display: block;
+    position: absolute;
+} #overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(50, 50, 50, 0.5);
+    transition: 300ms;
+    opacity: 0;
+    display: none;
+} #menu {
+    width: 500px;
+    height: 80%;
+    background: white;
+    font-family: "Helvetica Neue", arial;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+} #menu h1 {
+    text-align: center;
+} .mbi {
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 20px;
+    transition: 300ms;
+    font-size: 20px;
+    color: #EEE;
+    display: inline-block;
+    overflow: hidden;
+} .mbi:hover {
+    transition: 400ms;
+    font-size: 15px;
+    text-shadow: 2px 2px 0px #000;
+} .mbi:active {
+    transition: 200ms;
+    padding: 15px;
+} .mbi::selection {
+    background: none;
+}
