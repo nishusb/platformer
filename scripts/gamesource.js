@@ -1,7 +1,3 @@
-alert("wow. I feel so accompished.\n\nNo, seriously. There was so much math involved with the physics and stuff and the calculations were...\n\nSo yeah, enjoy. Have fun.\n\nControls: <left ^up >right\n\nKNOWN BUGS:\n*Teleports while falling into blocks\n\nUPDATE:\n*M for menu, P for pause, O for... see for yourself...");
-
-//OMG if you could read all the JSLint errorrs right now... it's just LEL. The funny thing is the console shows no errors XD
-
 var c = document.getElementById("game");
 var ctx = c.getContext("2d");
 c.style.opacity = 1;
@@ -33,7 +29,7 @@ var mouseX = 0, mouseY = 0, keys = [], mousePressed = false, menu = false;
 document.addEventListener("mousemove", function(e) {mouseX = e.clientX; mouseY = e.clientY;});
 document.addEventListener("keydown", function(e) {
     keys[e.keyCode] = true;
-    
+
     if (keys[80]) {
         if (!paused) {
             paused = true;
@@ -119,14 +115,14 @@ var player = {
     setLevel: function(toWhat) {
         toWhat = Math.round(toWhat);
         if (toWhat <= map.levels.length && toWhat >= 1) {
-            
+
             map.currlevel = toWhat-1;
             player.x = 0;
             player.y = 0;
             player.xv = 0;
             player.yv = 0;
             fadeIO();
-            
+
             if (map.levelMessages[map.currlevel].said === true) {
                 postToBoard(map.levelMessages[map.currlevel].msg);
             }
@@ -143,7 +139,7 @@ var outlines = false;
 
 function draw() {
     ctx.clearRect(0, 0, c.width, c.height);
-    
+
     ctx.fillStyle = player.color;
     ctx.strokeStyle = player.color;
     if (!outlines) {
@@ -157,7 +153,7 @@ function draw() {
     } else {
         ctx.strokeRect(c.width/2-10, c.height/2-10, 20, 20);
     }
-    
+
     for (var b = 0; b < map.levels[map.currlevel].length; b ++) {
         ctx.fillStyle = "#AAA";
         ctx.strokeStyle="#AAA";
@@ -228,10 +224,10 @@ function draw() {
             _ = undefined;
             __ = undefined;
         } else {
-            
+
         }
     }
-    
+
     ctx.fillStyle = "#2D5";
     ctx.strokeStyle = "#2D5";
     if (!outlines) {
@@ -239,7 +235,7 @@ function draw() {
     } else {
         ctx.strokeRect(0, (c.height/2+10)-player.y, c.width, (c.height/2+10)+player.y);
     }
-    
+
     for (var g = 0; g < map.grass.length; g++) {
         ctx.fillStyle = "#7D6";
         ctx.strokeStyle = "#7D6";
@@ -249,20 +245,20 @@ function draw() {
             ctx.strokeRect(map.grass[g].x-player.x+(c.width/2)-5, c.height/2-player.y-(map.grass[g].height-10), 10, map.grass[g].height);
         }
     }
-    
-    
+
+
     ctx.fillStyle = "#000";
     ctx.fillText("x:"+player.x+" y:"+player.y+" yv:"+player.yv+" xv:"+player.xv+" deaths:"+player.deaths, 10, 20);
-    
+
     var oty = 40;
     var anyText = false;
     for (var t = 0; t < map.output.length; t ++) {
         if (map.output[t].time > 0) {
             map.output[t].time -= 1;
             ctx.fillStyle = "rgba(0, 0, 0, "+map.output[t].time/100+")";
-            ctx.fillText(map.output[t].text, 10, oty);
+            ctx.fillText(map.output[t].text, 20, oty);
             anyText = true;
-            oty += 20;
+            oty += 30;
         } else {
             //Why is this even here???
         }
@@ -271,20 +267,20 @@ function draw() {
     if (!anyText) {
         map.output = []; //Variables in lists add up, so this will keep this list clean.
     }
-    
+
     anyText = undefined;
     oty = undefined;
-    
+
     if (!paused) {
         player.y += player.yv;
         player.x += player.xv;
-        
+
         if (player.y > 0) {
             player.y = 0;
             player.overFloor = true;
             player.yv = 0;
         }
-        
+
         for (var b = 0; b < map.levels[map.currlevel].length; b += 1) {
             if (player.x >= map.levels[map.currlevel][b].x && player.x < map.levels[map.currlevel][b].x+20 || player.x < map.levels[map.currlevel][b].x && player.x > map.levels[map.currlevel][b].x-20) {
                 if (map.levels[map.currlevel][b].type === "s" || map.levels[map.currlevel][b].type === "i" || map.levels[map.currlevel][b].type === "mp") {
@@ -398,7 +394,7 @@ function draw() {
             if (map.levels[map.currlevel][b].type === "mp") {
                 map.levels[map.currlevel][b].y += map.levels[map.currlevel][b].yv;
                 map.levels[map.currlevel][b].x += map.levels[map.currlevel][b].xv;
-                
+
                 if (map.levels[map.currlevel][b].y1 > map.levels[map.currlevel][b].y2) {
                     if (map.levels[map.currlevel][b].y > map.levels[map.currlevel][b].y1) {
                         map.levels[map.currlevel][b].yv = -1;
@@ -414,7 +410,7 @@ function draw() {
                         map.levels[map.currlevel][b].yv = -1;
                     }
                 }
-                
+
                 if (map.levels[map.currlevel][b].x1 > map.levels[map.currlevel][b].x2) {
                     if (map.levels[map.currlevel][b].x > map.levels[map.currlevel][b].x1) {
                         map.levels[map.currlevel][b].xv = -1;
@@ -437,7 +433,7 @@ function draw() {
                 }
             }
         }
-        
+
         if (player.x > 480) {
             player.x = 479;
             player.xv = -player.xv;
@@ -450,11 +446,11 @@ function draw() {
             postToBoard("A magical barrier keeps you from leaving the area.");
             fadeIO();
         }
-        
+
         if (player.overFloor !== true) {
             player.yv += 1;
         }
-        
+
         if (!menu) {
             if (keys[38] && player.overFloor) {
                 player.yv -= 8;
@@ -469,18 +465,18 @@ function draw() {
                 player.shifting = true;
             }
         }
-        
+
         player.x = Math.round(player.x*100)/100;
         player.xv *= 0.89;
         player.xv = Math.round(player.xv*10000)/10000;
-        
+
         if (player.overIce && !player.overStone) {
             player.xv *= 1.1;
         }
-        
+
         player.overFloor = false;
         player.onMP = [false, 0];
-        
+
         for (var ach = 0; ach < achievements.length; ach ++) {
             achievements[ach].condition();
             if (achievements[ach].yes && !achievements[ach].acheived) {
@@ -494,11 +490,11 @@ function draw() {
                 postToBoard(map.levelMessages[ms].msg, 300);
             }
         }
-        
+
         if (player.shifting) {
             player.xv *= 0.87;
         }
-        
+
         player.overStone = false;
         player.overIce = false; //I put this here so I could add the "Slippery!" achievement
         player.shifting = false;
