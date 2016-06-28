@@ -248,6 +248,7 @@ function draw() {
 
 
     ctx.fillStyle = "#000";
+    ctx.font="20px arial";
     ctx.fillText("x:"+player.x+" y:"+player.y+" yv:"+player.yv+" xv:"+player.xv+" deaths:"+player.deaths, 10, 20);
 
     var oty = 40;
