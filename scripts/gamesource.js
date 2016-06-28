@@ -316,7 +316,7 @@ function draw() {
                 if (map.levels[map.currlevel][b].type === "b") {
                     if (player.y <= map.levels[map.currlevel][b].y+20 && player.y >= map.levels[map.currlevel][b].y-4) {
                         player.yv = -15;
-                        if (keys[38] && map.currlevel > 11 && map.currlevel !== 14) {
+                        if (keys[87] && map.currlevel > 11 && map.currlevel !== 14) {
                             player.yv -= 8;
                             player.overFloor = false;
                         }
@@ -453,13 +453,13 @@ function draw() {
         }
 
         if (!menu) {
-            if (keys[38] && player.overFloor) {
+            if (keys[87] && player.overFloor) {
                 player.yv -= 8;
             }
-            if (keys[37]) {
+            if (keys[65]) {
                 player.xv -= 1;
             }
-            if (keys[39]) {
+            if (keys[68]) {
                 player.xv += 1;
             }
             if (keys[16] && map.currlevel > 8) {
