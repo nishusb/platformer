@@ -1,2 +1,2 @@
-# platformer
-simple html/js game
+# platformer.
+a simple html/js game
