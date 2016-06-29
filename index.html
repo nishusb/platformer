@@ -2,54 +2,17 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Platformer</title>
+        <title>platformer.</title>
         <link rel="icon" href="images/favicon.png">
-        <style>
-            html {
-                margin: 0px;
-                height: 100%;
-            }
-            body {
-                margin: 0px;
-                height: 100%;
-                font-family: "Trebuchet MS";
-                background-color: white;
-            }
-            #game {
-                opacity: 0;
-                background-color: lightgray;
-                /*vertical-align: bottom;*/
-                display: block;
-            }
-        </style>
+        <link rel="stylesheet" href="styles/index.css">
     </head>
     <body>
-        <style>
-            h1 {
-                text-align: center;
-                font-family: "Helvetica Neue", arial;
-                font-weight: 200;
-                font-size: 100px;
-            }
-            h2, a {
-                text-align: center;
-                font-family: "Helvetica Neue", arial;
-                font-weight: 200;
-            }
-            a {
-                transition: 300ms;
-                color: lightgray;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50px;
-            }
-            a:hover {
-                color: dimgray;
-            }
-        </style>
-        <h1>platformer.</h1>
-        <h2>by vnms.</h2>
-        <a href="game.html">start.</a>
+      <script>
+        function go() {
+          document.body.style.opacity = 0;
+          setTimeout(function() {window.location = "game";}, 500);
+        }
+      </script>
+      <div class="a"><a href="#" onclick="go()">start.</a><div>
     </body>
 </html>

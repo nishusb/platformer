@@ -52,3 +52,6 @@ html {
 } .mbi::selection {
     background: none;
 }
+#game {
+  transition: 500ms;
+}

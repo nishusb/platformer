@@ -1,0 +1,12 @@
+.a {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 20%;
+  font-family: arial;
+}
+a {
+  color: #000;
+}
+body {
+  transition: 500ms;
+}

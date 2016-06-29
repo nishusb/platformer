@@ -1,6 +1,6 @@
 var c = document.getElementById("game");
 var ctx = c.getContext("2d");
-c.style.opacity = 1;
+setTimeout(function(){c.style.opacity = 1;}, 100);
 
 function sizeWindow() {
     c.width = document.body.clientWidth || self.innerWidth;
@@ -76,7 +76,7 @@ for (var g = 0; g < 200; g += 1) {
 
 function postToBoard(txt, hl) {
     if (!hl) {
-        hl = 150;
+        hl = 300;
     }
     map.output.push({text: txt, time: hl});
 }
@@ -488,7 +488,7 @@ function draw() {
         for (var ms = 0; ms < map.levelMessages.length; ms ++) {
             if (map.currlevel === ms && map.levelMessages[ms].said === false) {
                 map.levelMessages[ms].said = true;
-                postToBoard(map.levelMessages[ms].msg, 300);
+                postToBoard(map.levelMessages[ms].msg);
             }
         }
 
