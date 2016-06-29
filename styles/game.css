@@ -8,7 +8,7 @@ html {
     background-color: white;
 } #game {
     opacity: 0;
-    background-color: lightgray;
+    background-color: lightblue;
     /*vertical-align: bottom;*/
     display: block;
     position: absolute;
