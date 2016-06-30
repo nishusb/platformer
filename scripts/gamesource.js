@@ -292,10 +292,10 @@ function draw() {
     }
 
     ctx.fillStyle = "rgba(0, 0, 0, 0.5)"
-    ctx.fillRect(5, 0, 175, 25);
+    ctx.fillRect(5, 0, 190, 25);
     ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.font="20px Open Sans Condensed, arial";
-    ctx.fillText("x:"+player.x+" y:"+player.y+" yv:"+player.yv+" xv:"+player.xv+" deaths:"+player.deaths, 10, 20);
+    ctx.fillText("x:"+Math.round(player.x)+" y:"+Math.round(player.y)+" yv:"+Math.round(player.yv)+" xv:"+Math.round(player.xv)+" deaths:"+player.deaths, 10, 20);
 
     var oty = 45;
     var anyText = false;
