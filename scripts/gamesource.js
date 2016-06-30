@@ -250,13 +250,6 @@ function draw() {
         }
     }
 
-    ctx.fillStyle = "#09e";
-    ctx.strokeStyle = "#09e";
-    if (!outlines) {
-        ctx.fillRect(0, (c.height/2+310+Math.sin(totalFrames/50)*10)-player.y, c.width, (c.height/2+300)+player.y);
-    } else {
-        ctx.strokeRect(0, (c.height/2+310)-player.y, c.width, (c.height/2+300)+player.y);
-    }
     ctx.fillStyle = "#2D5";
     ctx.strokeStyle = "#2D5";
     if (!outlines) {
@@ -284,6 +277,14 @@ function draw() {
         ctx.fillRect(c.width/2-507.5-player.x, (c.height/2+300)-player.y, 997.5, (c.height/2+300)+player.y);
     } else {
         ctx.strokeRect(c.width/2-507.5-player.x, (c.height/2+300)-player.y, 997.5, (c.height/2+300)+player.y);
+    }
+
+    ctx.fillStyle = "#09e";
+    ctx.strokeStyle = "#09e";
+    if (!outlines) {
+        ctx.fillRect(0, (c.height/2+310+Math.sin(totalFrames/50)*10)-player.y, c.width, (c.height/2+300)+player.y);
+    } else {
+        ctx.strokeRect(0, (c.height/2+310)-player.y, c.width, (c.height/2+300)+player.y);
     }
 
     for (var g = 0; g < map.grass.length; g++) {
