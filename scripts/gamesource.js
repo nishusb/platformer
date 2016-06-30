@@ -71,18 +71,27 @@ var map = {
     currlevel: 0
 }
 
-for (var g = 0; g < 100; g += 1) {
-    map.grass.push({height: Math.round(random(2, 4))*2, width: 3, x: Math.round(random(-200, 200))*10});
+for (var g = 0; g < 50; g += 1) {
+    map.grass.push({height: Math.round(random(2, 4))*2, width: 4, x: (g*2-50)*10});
 }
 for (var cl = 0; cl < 10; cl += 1) {
-    map.clouds.push({x: random(-2000, 2000), y: random(100, 500), op: random(2, 10)/10, s: random(100, 300), sp: random(1, 30)/10});
+    map.clouds.push({x: random(-2000, 2000), y: random(200, 500), op: random(2, 7)/10, s: random(100, 300), sp: random(1, 30)/10});
 }
 
 function postToBoard(txt, hl) {
     if (!hl) {
-        hl = 300;
+        hl = 400;
     }
     map.output.push({text: txt, time: hl});
+}
+
+var ggui = false;
+function toggleGui() {
+    if (ggui) {
+        ggui = false;
+    } else {
+        ggui = true;
+    }
 }
 
 var player = {
@@ -239,38 +248,45 @@ function draw() {
         }
     }
 
+    ctx.fillStyle = "#09e";
+    ctx.strokeStyle = "#09e";
+    if (!outlines) {
+        ctx.fillRect(0, (c.height/2+310)-player.y, c.width, (c.height/2+300)+player.y);
+    } else {
+        ctx.strokeRect(0, (c.height/2+310)-player.y, c.width, (c.height/2+300)+player.y);
+    }
     ctx.fillStyle = "#2D5";
     ctx.strokeStyle = "#2D5";
     if (!outlines) {
-        ctx.fillRect(0, (c.height/2+10)-player.y, c.width, (c.height/2+10)+player.y);
+        ctx.fillRect(c.width/2-507.5-player.x, (c.height/2+10)-player.y, 997.5, (c.height/2+10)+player.y);
     } else {
-        ctx.strokeRect(0, (c.height/2+10)-player.y, c.width, (c.height/2+10)+player.y);
+        ctx.strokeRect(c.width/2-507.5-player.x, (c.height/2+10)-player.y, 997.5, (c.height/2+10)+player.y);
     }
     ctx.fillStyle = "#801a00";
     ctx.strokeStyle = "#801a00";
     if (!outlines) {
-        ctx.fillRect(0, (c.height/2+50)-player.y, c.width, (c.height/2+50)+player.y);
+        ctx.fillRect(c.width/2-507.5-player.x, (c.height/2+50)-player.y, 997.5, (c.height/2+50)+player.y);
     } else {
-        ctx.strokeRect(0, (c.height/2+50)-player.y, c.width, (c.height/2+50)+player.y);
+        ctx.strokeRect(c.width/2-507.5-player.x, (c.height/2+50)-player.y, 997.5, (c.height/2+50)+player.y);
     }
     ctx.fillStyle = "#400600";
     ctx.strokeStyle = "#400600";
     if (!outlines) {
-        ctx.fillRect(0, (c.height/2+150)-player.y, c.width, (c.height/2+150)+player.y);
+        ctx.fillRect(c.width/2-507.5-player.x, (c.height/2+150)-player.y, 997.5, (c.height/2+150)+player.y);
     } else {
-        ctx.strokeRect(0, (c.height/2+150)-player.y, c.width, (c.height/2+150)+player.y);
+        ctx.strokeRect(c.width/2-507.5-player.x, (c.height/2+150)-player.y, 997.5, (c.height/2+150)+player.y);
     }
     ctx.fillStyle = "#555";
     ctx.strokeStyle = "#555";
     if (!outlines) {
-        ctx.fillRect(0, (c.height/2+300)-player.y, c.width, (c.height/2+300)+player.y);
+        ctx.fillRect(c.width/2-507.5-player.x, (c.height/2+300)-player.y, 997.5, (c.height/2+300)+player.y);
     } else {
-        ctx.strokeRect(0, (c.height/2+300)-player.y, c.width, (c.height/2+300)+player.y);
+        ctx.strokeRect(c.width/2-507.5-player.x, (c.height/2+300)-player.y, 997.5, (c.height/2+300)+player.y);
     }
 
     for (var g = 0; g < map.grass.length; g++) {
-        ctx.fillStyle = "#7D6";
-        ctx.strokeStyle = "#7D6";
+        ctx.fillStyle = "#4A3";
+        ctx.strokeStyle = "#4A3";
         if (!outlines) {
             ctx.fillRect(map.grass[g].x-player.x+(c.width/2)-5, c.height/2-player.y-(map.grass[g].height-10), map.grass[g].width, map.grass[g].height);
         } else {
@@ -286,17 +302,18 @@ function draw() {
             ctx.strokeRect(map.clouds[cl].x-player.x+(c.width/2)-5, c.height/2-player.y-(map.clouds[cl].y), map.clouds[cl].s, 100);
         }
         map.clouds[cl].x += map.clouds[cl].sp;
-        if (map.clouds[cl].x-player.x+(c.width/2)-5 > c.width) {
+        if (map.clouds[cl].x > 2000) {
           map.clouds[cl].x = -2100
         }
     }
 
     ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-    ctx.fillRect(5, 0, 190, 25);
+    if (ggui) {ctx.fillRect(5, 0, 190, 25);}
     ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.font="20px Open Sans Condensed, arial";
-    ctx.fillText("x:"+Math.round(player.x)+" y:"+Math.round(player.y)+" yv:"+Math.round(player.yv)+" xv:"+Math.round(player.xv)+" deaths:"+player.deaths, 10, 20);
-
+    if (ggui) {
+        ctx.fillText("x:"+Math.round(player.x)+" y:"+Math.round(player.y)+" yv:"+Math.round(player.yv)+" xv:"+Math.round(player.xv)+" deaths:"+player.deaths, 10, 20);
+    }
     var oty = 45;
     var anyText = false;
     for (var t = 0; t < map.output.length; t ++) {
@@ -321,13 +338,26 @@ function draw() {
     oty = undefined;
 
     if (!paused) {
+        if (player.yv > 9) {
+            player.yv = 9;
+        }
         player.y += player.yv;
         player.x += player.xv;
 
-        if (player.y > 0) {
+        if (player.y > 0 && player.x > -517.5 && player.x < 497.5 && player.y < 20) {
             player.y = 0;
             player.overFloor = true;
             player.yv = 0;
+        }
+        if (player.y > 20 && player.x > -517.5 && player.x < -500) {
+            player.x = -517.5;
+        }
+        if (player.y > 20 && player.x > 485 && player.x < 497.5) {
+            player.x = 497.5;
+        }
+
+        if (player.y > 400) {
+            player.die();
         }
 
         for (var b = 0; b < map.levels[map.currlevel].length; b += 1) {
@@ -481,19 +511,6 @@ function draw() {
                     player.nextLevel();
                 }
             }
-        }
-
-        if (player.x > 480) {
-            player.x = 479;
-            player.xv = -player.xv;
-            postToBoard("A magical barrier keeps you from leaving the area.");
-            fadeIO();
-        }
-        if (player.x < -500) {
-            player.x = -499;
-            player.xv = -player.xv;
-            postToBoard("A magical barrier keeps you from leaving the area.");
-            fadeIO();
         }
 
         if (player.overFloor !== true) {
