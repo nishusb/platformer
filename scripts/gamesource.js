@@ -66,6 +66,7 @@ var map = {
     output: [{text: "Welcome!", time: 100}, {text: "This is the message board. It tells you stuff.", time: 200}, {text:"Use WASD to move, P to pause, and M for menu.", time:400}],
     grass: [],
     clouds: [],
+    trees: [],
     levels: [[{type: "g", x: 50, y: 0}], [{type: "g", x: 150, y: 0}, {type: "s", x: 40, y: 0}], [{type: "g", x: 150, y: 0}, {type: "s", x: 40, y: 0}, {type: "l", x: 60, y: 5}], [{type: "s", x: 40, y: 0}, {type: "l", x: 60, y: 3}, {type: "l", x: 80, y: 3}, {type: "l", x: 100, y: 3}, {type: "s", x: 100, y: -20}, {type: "s", x: 200, y: -10}, {type: "s", x: 300, y: -20}, {type: "l", x: 120, y: 3}, {type: "l", x: 140, y: 3}, {type: "l", x: 160, y: 3}, {type: "l", x: 180, y: 3}, {type: "l", x: 200, y: 3}, {type: "l", x: 220, y: 3}, {type: "l", x: 240, y: 3}, {type: "l", x: 260, y: 3}, {type: "l", x: 280, y: 3}, {type: "l", x: 300, y: 3}, {type: "l", x: 320, y: 3}, {type: "l", x: 340, y: 3}, {type: "l", x: 360, y: 3}, {type: "l", x: 380, y: 3}, {type: "l", x: 400, y: 3}, {type: "s", x: 420, y: -10}, {type: "s", x: 420, y: 0}, {type: "s", x: 440, y: 0}, {type: "s", x: 460, y: 0}, {type: "s", x: 480, y: 0}, {type: "g", x: 460, y: -20}], [{type: "s", x: 40, y: 0}, {type: "l", x: 60, y: 3}, {type: "l", x: 80, y: 3}, {type: "l", x: 100, y: 3}, {type: "s", x: 100, y: -10}, {type: "s", x: 200, y: -20}, {type: "s", x: 300, y: -10}, {type: "l", x: 120, y: 3}, {type: "l", x: 140, y: 3}, {type: "l", x: 160, y: 3}, {type: "l", x: 180, y: 3}, {type: "l", x: 200, y: 3}, {type: "l", x: 220, y: 3}, {type: "l", x: 240, y: 3}, {type: "l", x: 260, y: 3}, {type: "l", x: 280, y: 3}, {type: "l", x: 300, y: 3}, {type: "l", x: 320, y: 3}, {type: "l", x: 340, y: 3}, {type: "l", x: 360, y: 3}, {type: "l", x: 380, y: 3}, {type: "l", x: 400, y: 3}, {type: "s", x: 420, y: 0}, {type: "s", x: 440, y: 0}, {type: "s", x: 460, y: 0}, {type: "s", x: 480, y: 0}, {type: "g", x: 460, y: -20}], [{type: "s", x: 40, y: 0}, {type: "s", x: 60, y: 0}, {type: "l", x: 80, y: 3}, {type: "l", x: 100, y: 3}, {type: "l", x: 120, y: 3}, {type: "l", x: 140, y: 3}, {type: "l", x: 160, y: 3}, {type: "l", x: 180, y: 3}, {type: "l", x: 200, y: 3}, {type: "l", x: 220, y: 3}, {type: "l", x: 240, y: 3}, {type: "l", x: 260, y: 3}, {type: "l", x: 280, y: 3}, {type: "l", x: 300, y: 3}, {type: "l", x: 320, y: 3}, {type: "l", x: 340, y: 3}, {type: "l", x: 360, y: 3}, {type: "l", x: 380, y: 3}, {type: "l", x: 400, y: 3}, {type: "s", x: 420, y: 0}, {type: "s", x: 440, y: 0}, {type: "s", x: 460, y: 0}, {type: "s", x: 480, y: 0}, {type: "g", x: 460, y: -20}, {type: "tp", x: 60, y: -20, x1: 420, y1: -20}], [{type: "i", x: 40, y: 0}, {type: "l", x: 60, y: 3}, {type: "l", x: 80, y: 3}, {type: "l", x: 100, y: 3}, {type: "i", x: 100, y: -10}, {type: "i", x: 200, y: -20}, {type: "i", x: 300, y: -10}, {type: "l", x: 120, y: 3}, {type: "l", x: 140, y: 3}, {type: "l", x: 160, y: 3}, {type: "l", x: 180, y: 3}, {type: "l", x: 200, y: 3}, {type: "l", x: 220, y: 3}, {type: "l", x: 240, y: 3}, {type: "l", x: 260, y: 3}, {type: "l", x: 280, y: 3}, {type: "l", x: 300, y: 3}, {type: "l", x: 320, y: 3}, {type: "l", x: 340, y: 3}, {type: "l", x: 360, y: 3}, {type: "l", x: 380, y: 3}, {type: "l", x: 400, y: 3}, {type: "i", x: 420, y: 0}, {type: "i", x: 440, y: 0}, {type: "i", x: 460, y: 0}, {type: "i", x: 480, y: 0}, {type: "g", x: 460, y: -20}], [{type: "mp", x: 40, y: 20, x1: 40, y1: 20, x2: 40, y2: -300, yv: -1, xv: 0}, {type: "s", x: 60, y: -300}, {type: "s", x: 80, y: -300}, {type: "s", x: 100, y: -300}, {type: "g", x: 80, y: -320}], [{type: "i", x: 40, y: 0}, {type: "i", x: 60, y: 0}, {type: "i", x: 80, y: 0}, {type: "i", x: 100, y: 0}, {type: "i", x: 120, y: 0}, {type: "i", x: 140, y: 0}, {type: "i", x: 160, y: 0}, {type: "i", x: 180, y: 0}, {type: "i", x: 200, y: 0}, {type: "i", x: 220, y: 0}, {type: "i", x: 240, y: 0}, {type: "i", x: 260, y: 0}, {type: "i", x: 280, y: 0}, {type: "i", x: 300, y: 0}, {type: "i", x: 320, y: 0}, {type: "i", x: 340, y: 0}, {type: "i", x: 360, y: 0}, {type: "s", x: 380, y: 0}, {type: "s", x: 400, y: 0}, {type: "s", x: 420, y: 0}, {type: "g", x: 400, y: -20}, {type: "l", x: 260, y: -20}, {type: "l", x: 280, y: -20}, {type: "i", x: -40, y: 0}, {type: "i", x: -60, y: 0}, {type: "i", x: -100, y: 0}, {type: "i", x: -80, y: 0}, {type: "i", x: -120, y: 0}, {type: "i", x: -140, y: 0}, {type: "i", x: -160, y: 0}, {type: "i", x: -180, y: 0}, {type: "i", x: -200, y: 0}, {type: "i", x: -220, y: 0}, {type: "i", x: -240, y: 0}, {type: "i", x: -260, y: 0}, {type: "i", x: -280, y: 0}, {type: "i", x: -300, y: 0}, {type: "i", x: -320, y: 0}, {type: "i", x: -340, y: 0}, {type: "i", x: -360, y: 0}, {type: "i", x: -380, y: 0}, {type: "i", x: -400, y: 0}, {type: "i", x: -420, y: 0}, {type: "i", x: -440, y: 0}, {type: "i", x: -460, y: 0}, {type: "i", x: -480, y: 0}, {type: "i", x: -500, y: 0}, {type: "s", x: 440, y: 0}, {type: "s", x: 460, y: 0}, {type: "s", x: 480, y: 0}, {type: "s", x: 500, y: 0}], [{type: "s", x: 20, y: 10}, {type: "s", x: -20, y: 10}, {type: "i", x: 40, y: 0}, {type: "s", x: -40, y: 0}, {type: "s", x: -80, y: 0}, {type: "s", x: -140, y: 0}, {type: "s", x: -180, y: 0}, {type: "s", x: -200, y: 0}, {type: "s", x: -220, y: 0}, {type: "s", x: -320, y: 0}, {type: "s", x: -340, y: 0}, {type: "s", x: 180, y: 0}, {type: "s", x: 100, y: 0}, {type: "s", x: 120, y: 0}, {type: "s", x: 240, y: 0}, {type: "s", x: 260, y: 0}, {type: "s", x: 280, y: 0}, {type: "s", x: 300, y: 0}, {type: "s", x: 340, y: 0}, {type: "s", x: 380, y: 0}, {type: "s", x: 480, y: 0}, {type: "s", x: 460, y: 0}, {type: "i", x: -300, y: 0}, {type: "i", x: -280, y: 0}, {type: "i", x: -240, y: 0}, {type: "i", x: -260, y: 0}, {type: "i", x: -160, y: 0}, {type: "i", x: -120, y: 0}, {type: "i", x: -100, y: 0}, {type: "i", x: -60, y: 0}, {type: "i", x: 60, y: 0}, {type: "i", x: 80, y: 0}, {type: "i", x: 140, y: 0}, {type: "i", x: 160, y: 0}, {type: "i", x: 200, y: 0}, {type: "i", x: 220, y: 0}, {type: "i", x: 320, y: 0}, {type: "i", x: 360, y: 0}, {type: "i", x: 440, y: 0}, {type: "i", x: 400, y: 0}, {type: "i", x: 420, y: 0}, {type: "i", x: 500, y: 0}, {type: "fakeBlockThatIsFake", x: 520, y: 0}, {type: "fakeBlockThatIsFake", x: 540, y: 0}, {type: "i", x: -360, y: 0}, {type: "i", x: -380, y: 0}, {type: "i", x: -400, y: 0}, {type: "i", x: -420, y: 0}, {type: "i", x: -440, y: 0}, {type: "i", x: -460, y: 0}, {type: "i", x: -480, y: 0}, {type: "i", x: -500, y: 0}, {type: "s", x: 280, y: -20}, {type: "s", x: 240, y: -60}, {type: "s", x: 180, y: -80}, {type: "s", x: 140, y: -100}, {type: "s", x: 80, y: -100}, {type: "s", x: 20, y: -120}, {type: "s", x: -40, y: -140}, {type: "s", x: -100, y: -100}, {type: "s", x: -160, y: -80}, {type: "s", x: -220, y: -120}, {type: "s", x: -180, y: -80}, {type: "s", x: -180, y: -160}, {type: "s", x: -140, y: -180}, {type: "s", x: -80, y: -200}, {type: "s", x: -40, y: -220}, {type: "s", x: 0, y: -240}, {type: "s", x: 20, y: -240}, {type: "s", x: 40, y: -240}, {type: "s", x: 60, y: -240}, {type: "g", x: 40, y: -260}], [{type: "s", x: 20, y: 10}, {type: "s", x: -20, y: 10}, {type: "s", x: 40, y: 0}, {type: "s", x: -40, y: 0}, {type: "s", x: 60, y: 0}, {type: "s", x: -60, y: 0}, {type: "s", x: 80, y: 0}, {type: "s", x: -80, y: 0}, {type: "s", x: 100, y: -20}, {type: "s", x: 100, y: 0}, {type: "s", x: -100, y: 0}, {type: "s", x: -100, y: -20}, {type: "fakeBlockThatIsFake", x: -120, y: -20}, {type: "l", x: -140, y: -20}, {type: "l", x: -120, y: 0}, {type: "l", x: -140, y: 0}, {type: "l", x: -160, y: 0}, {type: "l", x: -180, y: 0}, {type: "l", x: -200, y: 0}, {type: "l", x: -220, y: 0}, {type: "l", x: -240, y: 0}, {type: "l", x: -160, y: -20}, {type: "l", x: -180, y: -20}, {type: "l", x: -260, y: 0}, {type: "l", x: -280, y: 10}, {type: "l", x: -200, y: -10}, {type: "fakeBlockThatIsFake", x: -120, y: -20}, {type: "l", x: -120, y: -10}, {type: "fakeBlockThatIsFake", x: 120, y: -20}, {type: "l", x: 120, y: -10}, {type: "l", x: 120, y: 0}, {type: "l", x: 140, y: 0}, {type: "l", x: 160, y: 0}, {type: "s", x: 180, y: -20}, {type: "s", x: 180, y: 0}, {type: "s", x: 240, y: -40}, {type: "s", x: 240, y: -20}, {type: "s", x: 240, y: 0}, {type: "l", x: 200, y: 0}, {type: "l", x: 220, y: 0}, {type: "l", x: 220, y: -20}, {type: "l", x: 200, y: -10}, {type: "fakeBlockThatIsFake", x: 320, y: -40}, {type: "l", x: 260, y: -20}, {type: "l", x: 260, y: 0}, {type: "l", x: 280, y: 0}, {type: "l", x: 300, y: 0}, {type: "fakeBlockThatIsFake", x: 320, y: 0}, {type: "l", x: 340, y: 0}, {type: "l", x: 360, y: 0}, {type: "fakeBlockThatIsFake", x: 280, y: -40}, {type: "s", x: 280, y: -30}, {type: "l", x: 280, y: -10}, {type: "l", x: 300, y: -10}, {type: "l", x: 380, y: 10}, {type: "fakeBlockThatIsFake", x: 340, y: -20}, {type: "s", x: 320, y: -20}, {type: "s", x: 320, y: 0}, {type: "s", x: 400, y: 0}, {type: "s", x: 420, y: 0}, {type: "s", x: 440, y: 0}, {type: "g", x: 420, y: -20}], [{type: "s", x: -60, y: 0}, {type: "s", x: -40, y: 0}, {type: "s", x: 100, y: 0}, {type: "s", x: 180, y: 0}, {type: "s", x: 120, y: 0}, {type: "s", x: 140, y: 0}, {type: "s", x: 200, y: 0}, {type: "s", x: 340, y: 0}, {type: "s", x: 320, y: 0}, {type: "s", x: 300, y: 0}, {type: "s", x: 420, y: 0}, {type: "s", x: 440, y: 0}, {type: "s", x: 480, y: 0}, {type: "s", x: 460, y: 0}, {type: "s", x: 640, y: 0}, {type: "s", x: 620, y: 0}, {type: "s", x: 600, y: 0}, {type: "s", x: -280, y: 0}, {type: "s", x: -300, y: 0}, {type: "s", x: -320, y: 0}, {type: "s", x: -380, y: 0}, {type: "s", x: -500, y: 0}, {type: "s", x: -460, y: 0}, {type: "s", x: -480, y: 0}, {type: "s", x: -520, y: 0}, {type: "s", x: -620, y: 0}, {type: "s", x: -640, y: 0}, {type: "s", x: -180, y: 0}, {type: "s", x: -160, y: 0}, {type: "s", x: -20, y: 10}, {type: "s", x: 20, y: 10}, {type: "i", x: -600, y: 0}, {type: "i", x: -580, y: 0}, {type: "i", x: -560, y: 0}, {type: "i", x: -540, y: 0}, {type: "i", x: -440, y: 0}, {type: "i", x: -420, y: 0}, {type: "i", x: -400, y: 0}, {type: "i", x: -360, y: 0}, {type: "i", x: -340, y: 0}, {type: "i", x: -260, y: 0}, {type: "i", x: -240, y: 0}, {type: "i", x: -200, y: 0}, {type: "i", x: -220, y: 0}, {type: "i", x: -140, y: 0}, {type: "i", x: -120, y: 0}, {type: "i", x: -100, y: 0}, {type: "i", x: -80, y: 0}, {type: "i", x: 40, y: 0}, {type: "i", x: 60, y: 0}, {type: "i", x: 80, y: 0}, {type: "i", x: 160, y: 0}, {type: "i", x: 220, y: 0}, {type: "i", x: 240, y: 0}, {type: "i", x: 280, y: 0}, {type: "i", x: 260, y: 0}, {type: "i", x: 360, y: 0}, {type: "i", x: 380, y: 0}, {type: "i", x: 400, y: 0}, {type: "i", x: 580, y: 0}, {type: "i", x: 560, y: 0}, {type: "i", x: 540, y: 0}, {type: "i", x: 500, y: 0}, {type: "i", x: 520, y: 0}, {type: "b", x: 200, y: -20}, {type: "l", x: 220, y: -20}, {type: "l", x: 220, y: -40}, {type: "b", x: 280, y: -40}, {type: "s", x: 300, y: -24}, {type: "l", x: 240, y: -20}, {type: "l", x: 340, y: -20}, {type: "s", x: 240, y: -40}, {type: "s", x: 260, y: -40}, {type: "s", x: 320, y: -40}, {type: "s", x: 340, y: -40}, {type: "s", x: 360, y: -40}, {type: "s", x: 380, y: -30}, {type: "s", x: 400, y: -20}, {type: "s", x: 360, y: -20}, {type: "i", x: 380, y: -10}, {type: "s", x: 280, y: -20}, {type: "s", x: 300, y: -20}, {type: "s", x: 260, y: -20}, {type: "s", x: 320, y: -20}, {type: "s", x: 320, y: -120}, {type: "s", x: 340, y: -120}, {type: "s", x: 360, y: -120}, {type: "g", x: 340, y: -140}], [{type: "s", x: 80, y: 0}, {type: "s", x: -80, y: 0}, {type: "s", x: -60, y: 0}, {type: "s", x: 60, y: 0}, {type: "i", x: 100, y: 0}, {type: "i", x: -100, y: 0}, {type: "i", x: 200, y: 0}, {type: "i", x: 300, y: 0}, {type: "i", x: 440, y: 0}, {type: "i", x: 620, y: 0}, {type: "i", x: 600, y: 0}, {type: "i", x: -440, y: 0}, {type: "i", x: -400, y: 0}, {type: "i", x: -340, y: 0}, {type: "i", x: -280, y: 0}, {type: "i", x: -320, y: 0}, {type: "i", x: -300, y: 0}, {type: "i", x: -420, y: 0}, {type: "i", x: -560, y: 0}, {type: "i", x: -600, y: 0}, {type: "i", x: -580, y: 0}, {type: "i", x: -620, y: 0}, {type: "i", x: -200, y: 0}, {type: "i", x: -160, y: 0}, {type: "i", x: -200, y: 0}, {type: "i", x: 240, y: 0}, {type: "i", x: 380, y: 0}, {type: "i", x: 400, y: 0}, {type: "i", x: 420, y: 0}, {type: "i", x: 240, y: 0}, {type: "i", x: 220, y: 0}, {type: "i", x: 540, y: 0}, {type: "i", x: 560, y: 0}, {type: "s", x: -540, y: 0}, {type: "s", x: -520, y: 0}, {type: "s", x: -500, y: 0}, {type: "s", x: -480, y: 0}, {type: "s", x: -460, y: 0}, {type: "s", x: -380, y: 0}, {type: "s", x: -360, y: 0}, {type: "s", x: -260, y: 0}, {type: "s", x: -240, y: 0}, {type: "s", x: -220, y: 0}, {type: "s", x: -180, y: 0}, {type: "s", x: -140, y: 0}, {type: "s", x: -120, y: 0}, {type: "s", x: 40, y: 10}, {type: "s", x: -40, y: 10}, {type: "s", x: 120, y: 0}, {type: "s", x: 140, y: 0}, {type: "s", x: 180, y: 0}, {type: "s", x: 160, y: 0}, {type: "s", x: 280, y: 0}, {type: "s", x: 260, y: 0}, {type: "s", x: 360, y: 0}, {type: "s", x: 340, y: 0}, {type: "s", x: 320, y: 0}, {type: "s", x: 460, y: 0}, {type: "s", x: 480, y: 0}, {type: "s", x: 500, y: 0}, {type: "s", x: 520, y: 0}, {type: "s", x: 580, y: 0}, {type: "s", x: 640, y: 0}, {type: "s", x: -640, y: 0}, {type: "b", x: 80, y: -20}, {type: "s", x: -60, y: -180}, {type: "s", x: -40, y: -180}, {type: "s", x: -20, y: -180}, {type: "s", x: 0, y: -180}, {type: "s", x: 20, y: -180}, {type: "s", x: 20, y: -160}, {type: "s", x: 0, y: -160}, {type: "s", x: -20, y: -160}, {type: "s", x: 0, y: -140}, {type: "s", x: 0, y: -120}, {type: "s", x: 40, y: -180}, {type: "s", x: -20, y: -140}, {type: "s", x: 0, y: -100}, {type: "i", x: -60, y: -200}, {type: "i", x: -40, y: -200}, {type: "i", x: -20, y: -200}, {type: "i", x: 0, y: -200}, {type: "i", x: 20, y: -200}, {type: "i", x: 40, y: -200}, {type: "i", x: -160, y: -220}, {type: "i", x: -280, y: -220}, {type: "i", x: -380, y: -200}, {type: "s", x: -260, y: -220}, {type: "s", x: -420, y: -240}, {type: "s", x: -260, y: -300}, {type: "s", x: -180, y: -320}, {type: "i", x: -160, y: -320}, {type: "i", x: -360, y: -280}, {type: "i", x: -60, y: -320}, {type: "i", x: -40, y: -320}, {type: "s", x: -20, y: -320}, {type: "s", x: 140, y: -320}, {type: "s", x: 120, y: -320}, {type: "s", x: 100, y: -320}, {type: "i", x: 0, y: -320}, {type: "i", x: 60, y: -320}, {type: "i", x: 80, y: -320}, {type: "s", x: 20, y: -320}, {type: "s", x: 40, y: -320}, {type: "s", x: 120, y: -300}, {type: "s", x: 120, y: -280}, {type: "s", x: 120, y: -260}, {type: "s", x: 140, y: -300}, {type: "s", x: 100, y: -300}, {type: "s", x: 80, y: -300}, {type: "s", x: 60, y: -300}, {type: "s", x: 40, y: -300}, {type: "s", x: 100, y: -280}, {type: "s", x: 140, y: -340}, {type: "s", x: 120, y: -340}, {type: "s", x: 100, y: -340}, {type: "s", x: 80, y: -340}, {type: "i", x: 60, y: -340}, {type: "s", x: 40, y: -330}, {type: "g", x: 100, y: -360}, {type: "s", x: -360, y: -200}, {type: "s", x: -280, y: -300}, {type: 'fake', x: 0, y: 0}], [{type: "s", x: 60, y: 10}, {type: "s", x: 80, y: 0}, {type: "s", x: 100, y: -10}, {type: "s", x: 100, y: 0}, {type: "s", x: 120, y: -20}, {type: "s", x: 120, y: 0}, {type: "s", x: 220, y: -20}, {type: "l", x: 140, y: 0}, {type: "l", x: 160, y: 0}, {type: "l", x: 180, y: 0}, {type: "l", x: 220, y: 0}, {type: "l", x: 200, y: 0}, {type: "l", x: 240, y: 0}, {type: "l", x: 260, y: 0}, {type: "l", x: 280, y: 0}, {type: "l", x: 320, y: 0}, {type: "l", x: 300, y: 0}, {type: "l", x: 340, y: 0}, {type: "l", x: 360, y: 0}, {type: "l", x: 380, y: 0}, {type: "l", x: 400, y: 0}, {type: "l", x: 420, y: 0}, {type: "l", x: 440, y: 0}, {type: "l", x: 460, y: 0}, {type: "l", x: 480, y: 0}, {type: "l", x: 500, y: 0}, {type: "i", x: 520, y: 0}, {type: "i", x: 560, y: 0}, {type: "s", x: 540, y: 0}, {type: "s", x: 580, y: 0}, {type: "s", x: 600, y: 0}, {type: "s", x: 620, y: 0}, {type: "s", x: 640, y: 0}, {type: "fakeBlockIsFake", x: 320, y: -20}, {type: "fakeBlockIsFake", x: 360, y: -60}, {type: "i", x: 320, y: -20}, {type: "i", x: 440, y: -80}, {type: "fakeBlockIsFake", x: 400, y: -140}, {type: "fakeBlockIsFake", x: 400, y: -120}, {type: "s", x: 380, y: -120}, {type: "s", x: 380, y: -60}, {type: "i", x: 360, y: -60}, {type: "s", x: 320, y: -140}, {type: "s", x: 240, y: -160}, {type: "s", x: 180, y: -180}, {type: "s", x: 40, y: -180}, {type: "i", x: 60, y: -180}, {type: "i", x: 80, y: -180}, {type: "i", x: -40, y: -140}, {type: "fakeBlockIsFake", x: -100, y: -180}, {type: "fakeBlockIsFake", x: -100, y: -180}, {type: "s", x: -100, y: -180}, {type: "i", x: -120, y: -180}, {type: "s", x: -180, y: -180}, {type: "s", x: -200, y: -180}, {type: "s", x: -220, y: -180}, {type: "fakeBlockIsFake", x: -240, y: -180}, {type: "s", x: -260, y: -180}, {type: "s", x: -280, y: -180}, {type: "s", x: -300, y: -180}, {type: "s", x: -200, y: -160}, {type: "s", x: -200, y: -140}, {type: "s", x: -200, y: -120}, {type: "s", x: -200, y: -100}, {type: "s", x: -180, y: -160}, {type: "s", x: -260, y: -160}, {type: "s", x: -240, y: -160}, {type: "s", x: -220, y: -160}, {type: "s", x: -220, y: -140}, {type: "i", x: -320, y: -180}, {type: "g", x: -320, y: -220}, {type: "l", x: -240, y: -190}, {type: "s", x: -240, y: -180}, {type: 'fake', x: 0, y: 0}], [{type: "s", x: -40, y: 0}, {type: "s", x: -40, y: -20}, {type: "s", x: -40, y: -40}, {type: "s", x: -20, y: -40}, {type: "s", x: 0, y: -40}, {type: "s", x: 20, y: -40}, {type: "s", x: 40, y: -40}, {type: "s", x: 100, y: 0}, {type: "s", x: 60, y: -60}, {type: "s", x: 80, y: -60}, {type: "s", x: 100, y: -60}, {type: "s", x: 120, y: -60}, {type: "s", x: 40, y: -60}, {type: "s", x: 140, y: -60}, {type: "s", x: 160, y: -60}, {type: "s", x: 160, y: -40}, {type: "s", x: 180, y: -40}, {type: "s", x: 200, y: -40}, {type: "s", x: 200, y: -60}, {type: "s", x: 220, y: -60}, {type: "s", x: 240, y: -60}, {type: "s", x: 260, y: -60}, {type: "s", x: 280, y: -60}, {type: "s", x: 300, y: -60}, {type: "s", x: 320, y: -60}, {type: "s", x: 320, y: -40}, {type: "s", x: 340, y: -40}, {type: "l", x: 260, y: 0}, {type: "s", x: 360, y: -40}, {type: "s", x: 360, y: -60}, {type: "s", x: 440, y: 0}, {type: "s", x: 440, y: -20}, {type: "s", x: 440, y: -40}, {type: "s", x: 440, y: -60}, {type: "b", x: 400, y: 0}, {type: "s", x: 440, y: -80}, {type: "s", x: 440, y: -100}, {type: "s", x: 440, y: -120}, {type: "s", x: 420, y: -120}, {type: "s", x: 400, y: -120}, {type: "s", x: 360, y: -140}, {type: "s", x: 340, y: -140}, {type: "s", x: 320, y: -140}, {type: "s", x: 380, y: -140}, {type: "s", x: 300, y: -140}, {type: "s", x: 280, y: -120}, {type: "s", x: 260, y: -120}, {type: "s", x: 240, y: -120}, {type: "s", x: 220, y: -140}, {type: "s", x: 200, y: -140}, {type: "s", x: 180, y: -140}, {type: "s", x: 160, y: -140}, {type: "s", x: 140, y: -140}, {type: "s", x: 120, y: -120}, {type: "l", x: 340, y: -60}, {type: "l", x: 180, y: -60}, {type: "s", x: 100, y: -120}, {type: "s", x: 80, y: -120}, {type: "s", x: 60, y: -120}, {type: "s", x: 40, y: -120}, {type: "s", x: 20, y: -120}, {type: "s", x: 0, y: -120}, {type: "s", x: -40, y: -120}, {type: "s", x: -20, y: -120}, {type: "i", x: -20, y: -60}, {type: "i", x: -40, y: -60}, {type: "i", x: 0, y: -60}, {type: "i", x: 20, y: -60}, {type: "i", x: -60, y: -60}, {type: "i", x: -120, y: -60}, {type: "i", x: -140, y: -60}, {type: "i", x: -160, y: -60}, {type: "i", x: -100, y: -60}, {type: "i", x: -80, y: -60}, {type: "s", x: -160, y: -40}, {type: "s", x: -140, y: -40}, {type: "s", x: -120, y: -40}, {type: "s", x: -100, y: -40}, {type: "s", x: -80, y: -40}, {type: "s", x: -60, y: -40}, {type: "g", x: -100, y: 0}, {type: "s", x: -180, y: -60}, {type: "s", x: -180, y: -40}, {type: "s", x: -60, y: -120}, {type: "s", x: -80, y: -120}, {type: "s", x: -100, y: -120}, {type: "s", x: -120, y: -120}, {type: "s", x: -140, y: -120}, {type: "s", x: -140, y: -140}, {type: "s", x: -160, y: -140}, {type: "s", x: -180, y: -140}, {type: "s", x: -200, y: -140}, {type: "s", x: -220, y: -140}, {type: "s", x: -240, y: -120}, {type: "s", x: -240, y: -100}, {type: "s", x: -260, y: -100}, {type: "s", x: -260, y: -80}, {type: "s", x: -260, y: -60}, {type: "s", x: -260, y: -20}, {type: "s", x: -260, y: -40}, {type: "s", x: -260, y: 0}, {type: "s", x: -240, y: -140}, {type: "s", x: 120, y: -140}, {type: "s", x: 240, y: -140}, {type: "s", x: 280, y: -140}, {type: "s", x: 400, y: -140}, {type: 'fake', x: 0, y: 0}]],
     levelMessages: [{msg: "The green vibrating thing is the goal, enter it.", said: false}, {msg: "Oh no! there's a block blocking the way this time! (Better jump over it)", said: false}, {msg: "Player, meet lava. Lava, meet player.", said: false}, {msg: "Hehehehehehehehehe", said: false}, {msg: "Deja Vu... sorta XD", said: false}, {msg: "But how???", said: false}, {msg: "Ice Parkour! (3500% harder!)", said: false}, {msg: "Takin the elevator!", said: false}, {msg: "Speed is what you need!", said: false}, {msg: "good luck. Oh, and use shift to slow down.", said: false}, {msg: "Okay, have a break.", said: false}, {msg: "BOUNCY BOUNCE BOUNCE OMG WOW SO VERY BOUNCE XD", said: false}, {msg: "Up key + bouncepad = :D", said: false}, {msg: "Ye olde lava parkour", said: false}, {msg: "OBSTACLE COURSE LEL", said: false}],
     currlevel: 0
@@ -74,8 +75,11 @@ var map = {
 for (var g = 0; g < 50; g += 1) {
     map.grass.push({height: Math.round(random(2, 4))*2, width: 4, x: (g*2-50)*10});
 }
-for (var cl = 0; cl < 10; cl += 1) {
+for (var cl = 0; cl < 20; cl += 1) {
     map.clouds.push({x: random(-2000, 2000), y: random(200, 500), op: random(2, 7)/10, s: random(100, 300), sp: random(1, 30)/10});
+}
+for (var t = 0; t < 4; t += 1) {
+    map.trees.push({x: Math.round(random(-5.00, 4.50)+6.75)*100});
 }
 
 function postToBoard(txt, hl) {
@@ -84,6 +88,8 @@ function postToBoard(txt, hl) {
     }
     map.output.push({text: txt, time: hl});
 }
+
+var tpCoolDown = 0;
 
 var ggui = false;
 function toggleGui() {
@@ -154,6 +160,30 @@ var outlines = false;
 
 function draw() {
     ctx.clearRect(0, 0, c.width, c.height);
+
+    for (var g = 0; g < map.grass.length; g++) {
+        ctx.fillStyle = "#4A3";
+        ctx.strokeStyle = "#4A3";
+        if (!outlines) {
+            ctx.fillRect(map.grass[g].x-player.x+(c.width/2)-5, c.height/2-player.y-(map.grass[g].height-10), map.grass[g].width, map.grass[g].height);
+        } else {
+            ctx.strokeRect(map.grass[g].x-player.x+(c.width/2)-5, c.height/2-player.y-(map.grass[g].height-10), map.grass[g].width, map.grass[g].height);
+        }
+    }
+
+    for (var t in map.trees) {
+        if (!outlines) {
+            ctx.fillStyle = "#661400";
+            ctx.fillRect(map.trees[t].x-player.x, 150-player.y, 50, 200);
+            ctx.fillStyle = "#2a4";
+            ctx.fillRect(map.trees[t].x-player.x-10, 75-player.y, 70, 125);
+        } else {
+            ctx.strokeStyle = "#661400";
+            ctx.strokeRect(map.trees[t].x-player.x, 150-player.y, 50, 200);
+            ctx.strokeStyle = "#2a4";
+            ctx.strokeRect(map.trees[t].x-player.x-10, 75-player.y, 70, 125);
+        }
+    }
 
     ctx.fillStyle = player.color;
     ctx.strokeStyle = player.color;
@@ -287,15 +317,6 @@ function draw() {
         ctx.strokeRect(0, (c.height/2+310)-player.y, c.width, (c.height/2+300)+player.y);
     }
 
-    for (var g = 0; g < map.grass.length; g++) {
-        ctx.fillStyle = "#4A3";
-        ctx.strokeStyle = "#4A3";
-        if (!outlines) {
-            ctx.fillRect(map.grass[g].x-player.x+(c.width/2)-5, c.height/2-player.y-(map.grass[g].height-10), map.grass[g].width, map.grass[g].height);
-        } else {
-            ctx.strokeRect(map.grass[g].x-player.x+(c.width/2)-5, c.height/2-player.y-(map.grass[g].height-10), map.grass[g].width, map.grass[g].height);
-        }
-    }
     for (var cl = 0; cl < map.clouds.length; cl++) {
         ctx.fillStyle = "rgba(255, 255, 255, "+map.clouds[cl].op+")";
         ctx.strokeStyle = "#FFF";
@@ -341,6 +362,9 @@ function draw() {
     oty = undefined;
 
     if (!paused) {
+        if (tpCoolDown > 0) {
+            tpCoolDown --;
+        }
         if (player.yv > 9) {
             player.yv = 9;
         }
@@ -414,7 +438,7 @@ function draw() {
                     }
                 }
             }
-            if (map.levels[map.currlevel][b].type === "tp") {
+            if (map.levels[map.currlevel][b].type === "tp" && tpCoolDown <= 0) {
                 var otp;
                 if (player.y <= map.levels[map.currlevel][b].y+20 && player.y >= map.levels[map.currlevel][b].y-20 && player.x <= map.levels[map.currlevel][b].x+20 && player.x >= map.levels[map.currlevel][b].x-20) {
                     if (map.levels[map.currlevel][b].t <= 0) {
@@ -426,6 +450,7 @@ function draw() {
                         ctx.fillStyle = "#0BF";
                         ctx.fillRect(0, 0, c.width, c.height);
                         otp = true;
+                        tpCoolDown = 100;
                     }
                     if (map.levels[map.currlevel][b].t > 0) {
                         map.levels[map.currlevel][b].t -= 1;
@@ -436,8 +461,10 @@ function draw() {
                             ctx.strokeStyle = "#0BF";
                             if (!outlines) {
                                 ctx.fillRect(0, random(0, c.height), c.width, 5);
+                                ctx.fillRect(random(0, c.width), random(0, c.height), 10, 10);
                             } else {
                                 ctx.strokeRect(0, random(0, c.height), c.width, 5);
+                                ctx.strokeRect(random(0, c.width), random(0, c.height), 10, 10);
                             }
                         }
                         otp = true;
@@ -452,6 +479,7 @@ function draw() {
                         ctx.fillStyle = "#FB0";
                         ctx.fillRect(0, 0, c.width, c.height);
                         otp = true;
+                        tpCoolDown = 100;
                     }
                     if (map.levels[map.currlevel][b].t > 0) {
                         map.levels[map.currlevel][b].t -= 1;
@@ -462,8 +490,10 @@ function draw() {
                             ctx.strokeStyle = "#FB0";
                             if (!outlines) {
                                 ctx.fillRect(0, random(0, c.height), c.width, 5);
+                                ctx.fillRect(random(0, c.width), random(0, c.height), 10, 10);
                             } else {
                                 ctx.strokeRect(0, random(0, c.height), c.width, 5);
+                                ctx.strokeRect(random(0, c.width), random(0, c.height), 10, 10);
                             }
                         }
                         otp = true;
