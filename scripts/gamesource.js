@@ -291,7 +291,7 @@ function draw() {
         }
     }
 
-    ctx.fillStyle = "rgba(0, 0, 0, 0.5)"
+    ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
     ctx.fillRect(5, 0, 190, 25);
     ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.font="20px Open Sans Condensed, arial";
