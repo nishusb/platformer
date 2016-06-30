@@ -94,6 +94,8 @@ function toggleGui() {
     }
 }
 
+var totalFrames = 0;
+
 var player = {
     x: 0,
     y: 0,
@@ -251,7 +253,7 @@ function draw() {
     ctx.fillStyle = "#09e";
     ctx.strokeStyle = "#09e";
     if (!outlines) {
-        ctx.fillRect(0, (c.height/2+310)-player.y, c.width, (c.height/2+300)+player.y);
+        ctx.fillRect(0, (c.height/2+310+Math.sin(totalFrames/50)*10)-player.y, c.width, (c.height/2+300)+player.y);
     } else {
         ctx.strokeRect(0, (c.height/2+310)-player.y, c.width, (c.height/2+300)+player.y);
     }
@@ -565,6 +567,7 @@ function draw() {
         player.overIce = false; //I put this here so I could add the "Slippery!" achievement
         player.shifting = false;
     }
+    totalFrames++;
 }
 
 setInterval(draw, 20);
