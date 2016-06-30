@@ -38,14 +38,15 @@ html {
     padding: 10px;
     margin: 20px;
     transition: 300ms;
-    font-size: 20px;
+    font-size: 30px;
     color: #EEE;
     display: inline-block;
     overflow: hidden;
+    vertical-align: middle;
 } .mbi:hover {
     transition: 400ms;
-    font-size: 15px;
-    text-shadow: 2px 2px 0px #000;
+    font-size: 35px;
+    text-shadow: 2px 2px 2px #000;
 } .mbi:active {
     transition: 200ms;
     padding: 15px;
