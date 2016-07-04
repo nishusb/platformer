@@ -26,6 +26,8 @@ function fadeCol(thecolor) {
 
 var mouseX = 0, mouseY = 0, keys = [], mousePressed = false, menu = false;
 
+document.addEventListener("mousedown", function() {mousePressed = true});
+document.addEventListener("mouseup", function() {mousePressed = false});
 document.addEventListener("mousemove", function(e) {mouseX = e.clientX; mouseY = e.clientY;});
 document.addEventListener("keydown", function(e) {
     keys[e.keyCode] = true;
@@ -89,6 +91,10 @@ function postToBoard(txt, hl) {
     map.output.push({text: txt, time: hl});
 }
 
+function mouseclick() {
+  map.levels[0].push({type: curl, x: Math.round((mouseX-c.width/2+player.x)/20)*20, y: Math.round((mouseY-c.height/2+player.y)/20)*20});
+};
+
 var tpCoolDown = 0;
 
 var ggui = false;
@@ -98,6 +104,25 @@ function toggleGui() {
     } else {
         ggui = true;
     }
+}
+
+var curl = "s";
+function element(elmnt) {
+  curl = elmnt;
+}
+
+function getCode() {
+  var blocks = "";
+  var abcd = map.levels[0];
+  for (var abc in abcd) {
+    blocks += "{";
+    blocks += "type: "+abcd[abc].type+", ";
+    blocks += "x: "+abcd[abc].x+", ";
+    blocks += "y: "+abcd[abc].y;
+    blocks+= "}";
+  }
+
+  alert(blocks);
 }
 
 var totalFrames = 0;
