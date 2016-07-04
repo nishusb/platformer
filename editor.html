@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Platformer</title>
+        <link rel="icon" href="images/favicon.png">
+        <link rel="stylesheet" href="styles/game.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <style>
+            #info {
+                background: #666;
+                color: #FFF;
+                padding: 10px;
+            }
+            #info:before {
+                display: block;
+                content: "Game Info";
+                color: #DDD;
+                text-align: center;
+                font-size: 15px;
+            }
+            #lvlSel {
+                background: #222;
+            }
+            #lvlSel:before {
+                display: block;
+                content: "Level Select";
+                color: #DDD;
+                text-align: center;
+                padding: 10px;
+                font-size: 15px;
+            }
+            #colSel {
+                background: #444;
+            }
+            #colSel:before {
+                display: block;
+                content: "Player Color Select";
+                color: #DDD;
+                text-align: center;
+                padding: 10px;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body onresize="sizeWindow()">
+        <canvas id="game" width="0" height="0" style="opacity: 0"></canvas>
+        <div id="overlay">
+            <div id="menu">
+                <h1>Menu</h1>
+                <div id="info">
+                    Re-started work on the game after a 10 month hiatus.
+                </div>
+                <div>
+                  <div class="mbi"  style="background: #0af" onclick="toggleGui()">
+                    toggle debug stats
+                  </div>
+                </div>
+                <div id="colSel">
+                    <div class="mbi" style="background: #F20" onclick="colorSet('#F20')">
+                        red
+                    </div>
+                    <div class="mbi" style="background: #F50" onclick="colorSet('#F50')">
+                        orange
+                    </div>
+                    <div class="mbi" style="background: #FD0" onclick="colorSet('#FD0')">
+                        yellow
+                    </div>
+                    <div class="mbi" style="background: #2F7" onclick="colorSet('#2F7')">
+                        green
+                    </div>
+                    <div class="mbi" style="background: #3CF" onclick="colorSet('#3CF')">
+                        blue
+                    </div>
+                    <div class="mbi" style="background: #A0A" onclick="colorSet('#A0A')">
+                        purple
+                    </div>
+                    <div class="mbi" style="background: gray" onclick="colorSet('#777')">
+                        gray
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/editor.js"></script>
+    </body>
+</html>
