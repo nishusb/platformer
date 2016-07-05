@@ -108,7 +108,9 @@ function toggleGui() {
 
 var curl = "s";
 function element(elmnt) {
+  console.log(elmnt);
   curl = elmnt;
+  console.log(curl);
 }
 
 function getCode() {
@@ -116,13 +118,13 @@ function getCode() {
   var abcd = map.levels[0];
   for (var abc in abcd) {
     blocks += "{";
-    blocks += "type: "+abcd[abc].type+", ";
+    blocks += "type: '"+abcd[abc].type+"', ";
     blocks += "x: "+abcd[abc].x+", ";
     blocks += "y: "+abcd[abc].y;
-    blocks+= "}";
+    blocks+= "},";
   }
 
-  alert(blocks);
+  console.log(blocks);
 }
 
 var totalFrames = 0;
