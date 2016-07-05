@@ -21,7 +21,7 @@ html {
     opacity: 0;
     display: none;
 } #menu {
-    width: 500px;
+    width: 60%;
     height: 80%;
     background: white;
     font-family: "Helvetica Neue", arial;
@@ -34,7 +34,7 @@ html {
     cursor: pointer;
     text-align: center;
     width: 100px;
-    height: 100px;
+    /*height: 100px;*/
     padding: 10px;
     margin: 20px;
     transition: 300ms;
@@ -45,11 +45,8 @@ html {
     vertical-align: middle;
 } .mbi:hover {
     transition: 400ms;
-    font-size: 35px;
-    text-shadow: 2px 2px 2px #000;
-} .mbi:active {
-    transition: 200ms;
-    padding: 15px;
+    opacity: 0.5;
+}
 } .mbi::selection {
     background: none;
 }
