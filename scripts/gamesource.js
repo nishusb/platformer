@@ -73,10 +73,14 @@ var map = {
       [{type: 's', x: -520, y: 20},{type: 's', x: -580, y: 20},{type: 's', x: -600, y: 20},{type: 's', x: -620, y: 20},{type: 'g', x: -600, y: 0}],
       [{type: 's', x: 80, y: 0},{type: 'l', x: 60, y: 0},{type: 'g', x: 260, y: 0}],
       [{type: 's', x: 500, y: 20},{type: 's', x: 560, y: 20},{type: 's', x: 500, y: 40},{type: 's', x: 560, y: 40},{type: 's', x: 560, y: 60},{type: 's', x: 640, y: 20},{type: 's', x: 640, y: 20},{type: 's', x: 640, y: 40},{type: 's', x: 720, y: 20},{type: 's', x: 780, y: 40},{type: 's', x: 780, y: 60},{type: 's', x: 860, y: 60},{type: 's', x: 900, y: 60},{type: 's', x: 880, y: 60},{type: 's', x: 880, y: 80},{type: 's', x: 900, y: 80},{type: 's', x: 900, y: 100},{type: 's', x: 900, y: 120},{type: 's', x: 920, y: 80},{type: 'g', x: 920, y: 60}],
+      [{type: 'l', x: 140, y: 0},{type: 'l', x: 160, y: 0},{type: 'l', x: 180, y: 0},{type: 'l', x: 200, y: 0},{type: 'l', x: 220, y: 0},{type: 's', x: 120, y: 0},{type: 's', x: 100, y: 0},{type: 's', x: 240, y: 0},{type: 's', x: 260, y: 0},{type: 's', x: 340, y: 0},{type: 's', x: 360, y: 0},{type: 'l', x: 280, y: 0},{type: 'l', x: 300, y: 0},{type: 'l', x: 320, y: 0},{type: 'g', x: 480, y: -40}],
     ],
     levelMessages: [{msg: "enter the green shaky thing. that is the goal.", said: false}, {msg: "block in the way.", said: false}, {msg: "mind the gap.", said: false}],
     currlevel: 0
 }
+
+var deathmessages = ["ow.", "hey, that hurt!", "are you doing this on purpose?", "stop.", "just quit the game.", ".", "*evil stare", "why?", "fine. just keep killing me", "it never stops.", "you are evil.", "do you hate me?", "give mercy.", "please."];
+var dmgc = 0;
 
 var goalTime = 300;
 
@@ -122,7 +126,9 @@ var player = {
         player.xv = 0;
         player.yv = 0;
         fadeIO();
-        postToBoard("ouch.");
+        if (player.deathmessages[player.deaths]) {
+          postToBoard("player: "+deathmessages[player.deaths]);
+        }
         player.overFloor = false;
         player.deaths += 1
     },
@@ -224,11 +230,11 @@ function draw() {
             ctx.fillStyle = "#F30";
             ctx.strokeStyle="#F30";
             if (!outlines) {
-                ctx.fillRect(map.levels[map.currlevel][b].x-player.x+(c.width/2)-10, map.levels[map.currlevel][b].y-player.y+(c.height/2)-10, 20, 20);
+                ctx.fillRect(map.levels[map.currlevel][b].x-player.x+(c.width/2)-10, map.levels[map.currlevel][b].y-player.y+(c.height/2)-7, 20, 17);
                 ctx.fillStyle = "#F42";
                 ctx.fillRect(map.levels[map.currlevel][b].x-player.x+(c.width/2)-7.5, map.levels[map.currlevel][b].y-player.y+(c.height/2)-7.5, 15, 15);
             } else {
-                ctx.strokeRect(map.levels[map.currlevel][b].x-player.x+(c.width/2)-10, map.levels[map.currlevel][b].y-player.y+(c.height/2)-10, 20, 20);
+                ctx.strokeRect(map.levels[map.currlevel][b].x-player.x+(c.width/2)-10, map.levels[map.currlevel][b].y-player.y+(c.height/2)-7, 20, 17);
                 ctx.strokeStyle = "#F42";
                 ctx.strokeRect(map.levels[map.currlevel][b].x-player.x+(c.width/2)-7.5, map.levels[map.currlevel][b].y-player.y+(c.height/2)-7.5, 15, 15);
             }
@@ -422,7 +428,7 @@ function draw() {
                     }*/
                 }
                 if (map.levels[map.currlevel][b].type === "l") {
-                    if (player.y >= map.levels[map.currlevel][b].y-20 && player.y <= map.levels[map.currlevel][b].y+20) {
+                    if (player.y >= map.levels[map.currlevel][b].y-17 && player.y <= map.levels[map.currlevel][b].y+20) {
                         player.die();
                     }
                 }
