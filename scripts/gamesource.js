@@ -371,7 +371,7 @@ function draw() {
             ctx.fillStyle = "rgba(0, 0, 0, 0.5)"
             ctx.fillRect(30, oty+10, map.output[t].text.length*20, 50);
             ctx.font="50px Open Sans Condensed, arial";
-            ctx.fillStyle = "rgba(0, 0, 0, "+map.output[t].time/100+")";
+            ctx.fillStyle = "rgba(255, 255, 255, "+map.output[t].time/100+")";
             ctx.fillText(map.output[t].text, 50, oty+50);
             anyText = true;
             oty += 60;
