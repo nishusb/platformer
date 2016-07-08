@@ -74,6 +74,7 @@ var map = {
       [{type: 's', x: 80, y: 0},{type: 'l', x: 60, y: 0},{type: 'g', x: 260, y: 0}],
       [{type: 's', x: 500, y: 20},{type: 's', x: 560, y: 20},{type: 's', x: 500, y: 40},{type: 's', x: 560, y: 40},{type: 's', x: 560, y: 60},{type: 's', x: 640, y: 20},{type: 's', x: 640, y: 20},{type: 's', x: 640, y: 40},{type: 's', x: 720, y: 20},{type: 's', x: 780, y: 40},{type: 's', x: 780, y: 60},{type: 's', x: 860, y: 60},{type: 's', x: 900, y: 60},{type: 's', x: 880, y: 60},{type: 's', x: 880, y: 80},{type: 's', x: 900, y: 80},{type: 's', x: 900, y: 100},{type: 's', x: 900, y: 120},{type: 's', x: 920, y: 80},{type: 'g', x: 920, y: 60}],
       [{type: 'l', x: 140, y: 0},{type: 'l', x: 160, y: 0},{type: 'l', x: 180, y: 0},{type: 'l', x: 200, y: 0},{type: 'l', x: 220, y: 0},{type: 's', x: 120, y: 0},{type: 's', x: 100, y: 0},{type: 's', x: 240, y: 0},{type: 's', x: 260, y: 0},{type: 's', x: 340, y: 0},{type: 's', x: 360, y: 0},{type: 'l', x: 280, y: 0},{type: 'l', x: 300, y: 0},{type: 'l', x: 320, y: 0},{type: 'g', x: 480, y: -40}],
+      [{type: 's', x: 500, y: 300},{type: 's', x: 520, y: 300},{type: 's', x: 540, y: 300},{type: 's', x: 560, y: 300},{type: 's', x: 580, y: 300},{type: 's', x: 560, y: 320},{type: 's', x: 600, y: 300},{type: 's', x: 620, y: 300},{type: 's', x: 640, y: 300},{type: 's', x: 640, y: 320},{type: 's', x: 720, y: 300},{type: 's', x: 720, y: 320},{type: 's', x: 740, y: 300},{type: 's', x: 760, y: 300},{type: 's', x: 820, y: 300},{type: 's', x: 840, y: 300},{type: 's', x: 840, y: 320},{type: 's', x: 940, y: 300},{type: 's', x: 960, y: 300},{type: 's', x: 980, y: 300},{type: 's', x: 980, y: 320},{type: 's', x: 1060, y: 320},{type: 's', x: 1060, y: 300},{type: 's', x: 1080, y: 300},{type: 's', x: 1120, y: 300},{type: 's', x: 1100, y: 300},{type: 's', x: 1180, y: 280},{type: 's', x: 1260, y: 300},{type: 's', x: 1300, y: 260},{type: 's', x: 1280, y: 280},{type: 's', x: 1300, y: 280},{type: 's', x: 1300, y: 300},{type: 's', x: 1280, y: 300},{type: 's', x: 1380, y: 260},{type: 's', x: 1460, y: 280},{type: 's', x: 1560, y: 280},{type: 's', x: 1540, y: 280},{type: 'g', x: 1560, y: 260}],
     ],
     levelMessages: [{msg: "enter the green shaky thing. that is the goal.", said: false}, {msg: "block in the way.", said: false}, {msg: "mind the gap.", said: false}, {msg: "oh. lava.", said: false}],
     currlevel: 0
@@ -146,7 +147,7 @@ var player = {
             player.xv = 0;
             player.yv = 0;
             fadeIO();
-            postToBoard("level "+(map.currlevel+1)+")")
+            //postToBoard("level "+(map.currlevel+1)+")")
         }
     },
     setLevel: function(toWhat) {
@@ -610,7 +611,7 @@ function draw() {
         for (var ms = 0; ms < map.levelMessages.length; ms ++) {
             if (map.currlevel === ms && map.levelMessages[ms].said === false) {
                 map.levelMessages[ms].said = true;
-                postToBoard(map.levelMessages[ms].msg);
+                postToBoard("Level "+(map.currlevel+1)+") "+map.levelMessages[ms].msg);
             }
         }
 
