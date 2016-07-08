@@ -79,7 +79,7 @@ var map = {
     currlevel: 0
 }
 
-var deathmessages = ["ow.", "hey, that hurt!", "are you doing this on purpose?", "stop.", "just quit the game.", ".", "*evil stare", "why?", "fine. just keep killing me", "it never stops.", "you are evil.", "do you hate me?", "give mercy.", "please."];
+var deathmessages = ["ow.", "that hurt!", "please stop.", "this isn't fun!", "why?", "stop!", "I'm telling the creator!", "that's it!", "I don't want to do this anymore!", "I'm warning you!", "last chance!"];
 var dmgc = 0;
 
 var goalTime = 300;
@@ -126,11 +126,13 @@ var player = {
         player.xv = 0;
         player.yv = 0;
         fadeIO();
-        if (player.deathmessages[player.deaths]) {
-          postToBoard("player: "+deathmessages[player.deaths]);
-        }
+        postToBoard("player: "+deathmessages[player.deaths]);
         player.overFloor = false;
-        player.deaths += 1
+        player.deaths += 1;
+        if (player.deaths > 11) {
+          fadeIO();
+          location.reload();
+        }
     },
     overIce: false,
     overStone: false,
@@ -175,6 +177,20 @@ var outlines = false;
 function draw() {
     ctx.clearRect(0, 0, c.width, c.height);
 
+    for (var t in map.trees) {
+        if (!outlines) {
+            ctx.fillStyle = "#661400";
+            ctx.fillRect(map.trees[t].x-player.x+c.width/2-500, c.height/2-190-player.y, 50, 200);
+            ctx.fillStyle = "#2a4";
+            ctx.fillRect(map.trees[t].x-player.x-10+c.width/2-500, c.height/2-200-player.y, 70, 125);
+        } else {
+            ctx.strokeStyle = "#661400";
+            ctx.strokeRect(map.trees[t].x-player.x+c.width/2-500, c.height/2-190-player.y, 50, 200);
+            ctx.strokeStyle = "#2a4";
+            ctx.strokeRect(map.trees[t].x-player.x-10+c.width/2-500,  c.height/2-200-player.y, 70, 125);
+        }
+    }
+
     for (var g = 0; g < map.grass.length; g++) {
         ctx.fillStyle = "#4A3";
         ctx.strokeStyle = "#4A3";
@@ -182,20 +198,6 @@ function draw() {
             ctx.fillRect(map.grass[g].x-player.x+(c.width/2)-5, c.height/2-player.y-(map.grass[g].height-10), map.grass[g].width, map.grass[g].height);
         } else {
             ctx.strokeRect(map.grass[g].x-player.x+(c.width/2)-5, c.height/2-player.y-(map.grass[g].height-10), map.grass[g].width, map.grass[g].height);
-        }
-    }
-
-    for (var t in map.trees) {
-        if (!outlines) {
-            ctx.fillStyle = "#661400";
-            ctx.fillRect(map.trees[t].x-player.x, 150-player.y, 50, 200);
-            ctx.fillStyle = "#2a4";
-            ctx.fillRect(map.trees[t].x-player.x-10, 75-player.y, 70, 125);
-        } else {
-            ctx.strokeStyle = "#661400";
-            ctx.strokeRect(map.trees[t].x-player.x, 150-player.y, 50, 200);
-            ctx.strokeStyle = "#2a4";
-            ctx.strokeRect(map.trees[t].x-player.x-10, 75-player.y, 70, 125);
         }
     }
 
@@ -357,12 +359,20 @@ function draw() {
     for (var t = 0; t < map.output.length; t ++) {
         if (map.output[t].time > 0) {
             map.output[t].time -= 1;
+            if (c.width < 500) {
             ctx.fillStyle = "rgba(0, 0, 0, 0.5)"
             ctx.fillRect(10, oty-20, map.output[t].text.length*10, 25);
             ctx.fillStyle = "rgba(255, 255, 255, "+map.output[t].time/100+")";
             ctx.fillText(map.output[t].text, 20, oty);
             anyText = true;
             oty += 30;
+          } else {
+            ctx.font="50px Open Sans Condensed, arial";
+            ctx.fillStyle = "rgba(0, 0, 0, "+map.output[t].time/100+")";
+            ctx.fillText(map.output[t].text, 50, oty+50);
+            anyText = true;
+            oty += 60;
+          }
         } else {
             //Why is this even here???
         }
