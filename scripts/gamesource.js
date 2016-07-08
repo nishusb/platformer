@@ -63,7 +63,7 @@ document.addEventListener("keydown", function(e) {
 document.addEventListener("keyup", function(e) {keys[e.keyCode] = false});
 
 var map = {
-    output: [{text: "This is the message board. It tells you stuff.", time: 200}, {text:"Use WASD to move, P to pause, and M for menu.", time:400}],
+    output: [{text: "[BETA VERSION]", time: 100}, {text: "This is the message board. It tells you stuff.", time: 200}, {text:"Use WASD to move, P to pause, and M for menu.", time:400}],
     grass: [],
     clouds: [],
     trees: [],
@@ -75,7 +75,7 @@ var map = {
       [{type: 's', x: 500, y: 20},{type: 's', x: 560, y: 20},{type: 's', x: 500, y: 40},{type: 's', x: 560, y: 40},{type: 's', x: 560, y: 60},{type: 's', x: 640, y: 20},{type: 's', x: 640, y: 20},{type: 's', x: 640, y: 40},{type: 's', x: 720, y: 20},{type: 's', x: 780, y: 40},{type: 's', x: 780, y: 60},{type: 's', x: 860, y: 60},{type: 's', x: 900, y: 60},{type: 's', x: 880, y: 60},{type: 's', x: 880, y: 80},{type: 's', x: 900, y: 80},{type: 's', x: 900, y: 100},{type: 's', x: 900, y: 120},{type: 's', x: 920, y: 80},{type: 'g', x: 920, y: 60}],
       [{type: 'l', x: 140, y: 0},{type: 'l', x: 160, y: 0},{type: 'l', x: 180, y: 0},{type: 'l', x: 200, y: 0},{type: 'l', x: 220, y: 0},{type: 's', x: 120, y: 0},{type: 's', x: 100, y: 0},{type: 's', x: 240, y: 0},{type: 's', x: 260, y: 0},{type: 's', x: 340, y: 0},{type: 's', x: 360, y: 0},{type: 'l', x: 280, y: 0},{type: 'l', x: 300, y: 0},{type: 'l', x: 320, y: 0},{type: 'g', x: 480, y: -40}],
     ],
-    levelMessages: [{msg: "enter the green shaky thing. that is the goal.", said: false}, {msg: "block in the way.", said: false}, {msg: "mind the gap.", said: false}],
+    levelMessages: [{msg: "enter the green shaky thing. that is the goal.", said: false}, {msg: "block in the way.", said: false}, {msg: "mind the gap.", said: false}, {msg: "oh. lava.", said: false}],
     currlevel: 0
 }
 
@@ -90,8 +90,8 @@ for (var g = 0; g < 50; g += 1) {
 for (var cl = 0; cl < 20; cl += 1) {
     map.clouds.push({x: random(-2000, 2000), y: random(200, 500), op: random(2, 7)/10, s: random(100, 300), sp: random(1, 30)/10});
 }
-for (var t = 0; t < 4; t += 1) {
-    map.trees.push({x: Math.round(random(-5.00, 4.50)+6.75)*100});
+for (var t = 0; t < 5; t += 1) {
+    map.trees.push({x: Math.round(random(-5.00, 4.50)+6.75)*100-200});
 }
 
 function postToBoard(txt, hl) {

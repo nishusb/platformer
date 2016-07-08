@@ -65,7 +65,7 @@ document.addEventListener("keydown", function(e) {
 document.addEventListener("keyup", function(e) {keys[e.keyCode] = false});
 
 var map = {
-    output: [{text: "Welcome!", time: 100}, {text: "This is the message board. It tells you stuff.", time: 200}, {text:"Use WASD to move, P to pause, and M for menu.", time:400}],
+    output: [{text: "*beta version", time: 100}, {text: "This is the message board. It tells you things.", time: 200}, {text:"Use WASD to move, P to pause, and M for menu.", time:400}],
     grass: [],
     clouds: [],
     trees: [],
