@@ -1,0 +1,11 @@
+body {
+    padding-top: 60px;
+    font-family: arial;
+    text-align: center;
+    transform: scale(2, 2);
+    overflow: hidden;
+    color: #000;
+}
+a {
+  color: #0af;
+}
