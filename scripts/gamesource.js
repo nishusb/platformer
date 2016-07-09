@@ -63,7 +63,7 @@ document.addEventListener("keydown", function(e) {
 document.addEventListener("keyup", function(e) {keys[e.keyCode] = false});
 
 var map = {
-    output: [{text: "[BETA VERSION]", time: 100}, {text: "This is the message board. It tells you stuff.", time: 200}, {text:"Use WASD to move, P to pause, and M for menu.", time:400}],
+    output: [],
     grass: [],
     clouds: [],
     trees: [],
@@ -75,6 +75,8 @@ var map = {
       [{type: 's', x: 500, y: 20},{type: 's', x: 560, y: 20},{type: 's', x: 500, y: 40},{type: 's', x: 560, y: 40},{type: 's', x: 560, y: 60},{type: 's', x: 640, y: 20},{type: 's', x: 640, y: 20},{type: 's', x: 640, y: 40},{type: 's', x: 720, y: 20},{type: 's', x: 780, y: 40},{type: 's', x: 780, y: 60},{type: 's', x: 860, y: 60},{type: 's', x: 900, y: 60},{type: 's', x: 880, y: 60},{type: 's', x: 880, y: 80},{type: 's', x: 900, y: 80},{type: 's', x: 900, y: 100},{type: 's', x: 900, y: 120},{type: 's', x: 920, y: 80},{type: 'g', x: 920, y: 60}],
       [{type: 'l', x: 140, y: 0},{type: 'l', x: 160, y: 0},{type: 'l', x: 180, y: 0},{type: 'l', x: 200, y: 0},{type: 'l', x: 220, y: 0},{type: 's', x: 120, y: 0},{type: 's', x: 100, y: 0},{type: 's', x: 240, y: 0},{type: 's', x: 260, y: 0},{type: 's', x: 340, y: 0},{type: 's', x: 360, y: 0},{type: 'l', x: 280, y: 0},{type: 'l', x: 300, y: 0},{type: 'l', x: 320, y: 0},{type: 'g', x: 480, y: -40}],
       [{type: 's', x: 500, y: 300},{type: 's', x: 520, y: 300},{type: 's', x: 540, y: 300},{type: 's', x: 560, y: 300},{type: 's', x: 580, y: 300},{type: 's', x: 560, y: 320},{type: 's', x: 600, y: 300},{type: 's', x: 620, y: 300},{type: 's', x: 640, y: 300},{type: 's', x: 640, y: 320},{type: 's', x: 720, y: 300},{type: 's', x: 720, y: 320},{type: 's', x: 740, y: 300},{type: 's', x: 760, y: 300},{type: 's', x: 820, y: 300},{type: 's', x: 840, y: 300},{type: 's', x: 840, y: 320},{type: 's', x: 940, y: 300},{type: 's', x: 960, y: 300},{type: 's', x: 980, y: 300},{type: 's', x: 980, y: 320},{type: 's', x: 1060, y: 320},{type: 's', x: 1060, y: 300},{type: 's', x: 1080, y: 300},{type: 's', x: 1120, y: 300},{type: 's', x: 1100, y: 300},{type: 's', x: 1180, y: 280},{type: 's', x: 1260, y: 300},{type: 's', x: 1300, y: 260},{type: 's', x: 1280, y: 280},{type: 's', x: 1300, y: 280},{type: 's', x: 1300, y: 300},{type: 's', x: 1280, y: 300},{type: 's', x: 1380, y: 260},{type: 's', x: 1460, y: 280},{type: 's', x: 1560, y: 280},{type: 's', x: 1540, y: 280},{type: 'g', x: 1560, y: 260}],
+      [{type: 'i', x: 100, y: 0},{type: 'i', x: 160, y: -20},{type: 'i', x: 220, y: -20},{type: 'i', x: 260, y: -40},{type: 'i', x: 340, y: -60},{type: 'i', x: 280, y: -40},{type: 'i', x: 400, y: -20},{type: 'i', x: 480, y: 0},{type: 'l', x: 120, y: 0},{type: 'l', x: 140, y: 0},{type: 'l', x: 160, y: 0},{type: 'l', x: 180, y: 0},{type: 'l', x: 200, y: 0},{type: 'l', x: 220, y: 0},{type: 'l', x: 240, y: 0},{type: 'l', x: 260, y: 0},{type: 'l', x: 280, y: 0},{type: 'l', x: 300, y: 0},{type: 'l', x: 320, y: 0},{type: 'l', x: 340, y: 0},{type: 'l', x: 360, y: 0},{type: 'l', x: 380, y: 0},{type: 'l', x: 400, y: 0},{type: 'l', x: 420, y: 0},{type: 'l', x: 440, y: 0},{type: 'l', x: 460, y: 0},{type: 's', x: 500, y: 100},{type: 's', x: 520, y: 100},{type: 'i', x: 580, y: 100},{type: 's', x: 640, y: 140},{type: 's', x: 660, y: 140},{type: 'g', x: 680, y: 140},{type: 's', x: 660, y: 160},{type: 's', x: 640, y: 160},{type: 's', x: 640, y: 180},{type: 's', x: 660, y: 180},{type: 's', x: 680, y: 180},{type: 's', x: 700, y: 180},{type: 's', x: 700, y: 180},{type: 's', x: 720, y: 180},{type: 's', x: 680, y: 160},{type: 's', x: 700, y: 160},{type: 's', x: 700, y: 140},{type: 's', x: 720, y: 140},{type: 's', x: 720, y: 160},{type: 's', x: 720, y: 120},{type: 's', x: 720, y: 100},{type: 's', x: 640, y: 120},{type: 's', x: 640, y: 100},{type: 's', x: 680, y: 200},{type: 's', x: 680, y: 220},{type: 's', x: 680, y: 240},{type: 's', x: 680, y: 260},{type: 's', x: 680, y: 280},{type: 's', x: 680, y: 300},{type: 's', x: 680, y: 300},{type: 's', x: 640, y: 200},{type: 's', x: 640, y: 220},{type: 's', x: 640, y: 240},{type: 's', x: 640, y: 260},{type: 's', x: 640, y: 280},{type: 's', x: 640, y: 300},{type: 's', x: 640, y: 320},{type: 's', x: 680, y: 320},{type: 's', x: 720, y: 200},{type: 's', x: 720, y: 220},{type: 's', x: 720, y: 240},{type: 's', x: 720, y: 260},{type: 's', x: 720, y: 280},{type: 's', x: 720, y: 300},{type: 's', x: 720, y: 320}],
+      [],
     ],
     levelMessages: [{msg: "enter the green shaky thing. that is the goal.", said: false}, {msg: "block in the way.", said: false}, {msg: "mind the gap.", said: false}, {msg: "oh. lava.", said: false}],
     currlevel: 0
@@ -97,12 +99,15 @@ for (var t = 0; t < 5; t += 1) {
 
 function postToBoard(txt, hl) {
     if (!hl) {
-        hl = 400;
+        hl = 200;
     }
     map.output.push({text: txt, time: hl});
 }
 
 var tpCoolDown = 0;
+
+var flymode;
+//SET TRUE FOR FLIGHT ^^^
 
 var ggui = false;
 function toggleGui() {
@@ -132,7 +137,7 @@ var player = {
         player.deaths += 1;
         if (player.deaths > 11) {
           fadeIO();
-          location.reload();
+          window.location = "lose.html";
         }
     },
     overIce: false,
@@ -369,7 +374,7 @@ function draw() {
             oty += 30;
           } else {
             ctx.fillStyle = "rgba(0, 0, 0, 0.5)"
-            ctx.fillRect(30, oty+10, map.output[t].text.length*20, 50);
+            ctx.fillRect(50, oty+10, map.output[t].text.length*20, 50);
             ctx.font="50px Open Sans Condensed, arial";
             ctx.fillStyle = "rgba(255, 255, 255, "+map.output[t].time/100+")";
             ctx.fillText(map.output[t].text, 50, oty+50);
@@ -573,19 +578,27 @@ function draw() {
             }
         }
 
-        if (player.overFloor !== true) {
+        if (player.overFloor !== true && !flymode) {
             player.yv += 1;
         }
 
         if (!menu) {
-            if (keys[87] && player.overFloor) {
-                player.yv -= 8;
+            if (keys[87]) {
+                if (player.overFloor && !flymode) {
+                    player.yv -= 8;
+                }
+                if (flymode) {
+                    player.yv -= 1;
+                }
             }
             if (keys[65]) {
                 player.xv -= 1;
             }
             if (keys[68]) {
                 player.xv += 1;
+            }
+            if (keys[83]) {
+                player.yv += 1;
             }
             if (keys[16] && map.currlevel > 8) {
                 player.shifting = true;
@@ -594,6 +607,9 @@ function draw() {
 
         player.x = Math.round(player.x*100)/100;
         player.xv *= 0.89;
+        if (flymode) {
+            player.yv *= 0.89;
+        }
         player.xv = Math.round(player.xv*10000)/10000;
 
         if (player.overIce && !player.overStone) {
