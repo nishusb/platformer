@@ -6,13 +6,20 @@
         <link rel="icon" href="images/favicon.png">
         <link rel="stylesheet" href="styles/index.css">
     </head>
-    <body>
+    <body style='background-image: url("images/preview.png");'>
       <script>
         function go() {
-          document.body.style.opacity = 0;
-          setTimeout(function() {window.location = "game";}, 500);
+          that.style.opacity = 0;
+          overL.style.display="block";
+          setTimeout(function() {overL.style.opacity=1;}, 1000);
+          setTimeout(function() {window.location = "game";}, 1500);
         }
       </script>
-      <div class="a"><a href="#" onclick="go()">start.</a><div>
+      <div id="that">
+          <a href="#" onclick="go()">start.</a>
+          <p>wasd to move, m for menu, and p for pause</p>
+          <h6>made by vnms with <3</h6>
+      </div>
+      <div id="overL" style="display: none; margin: 0; position: fixed; width: 100%; height: 100%; background-color: #fff; top: 0; left: 0; opacity: 0; transition: 500ms"</div>
     </body>
 </html>
