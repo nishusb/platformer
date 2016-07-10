@@ -91,9 +91,6 @@ var dmgc = 0;
 
 var goalTime = 300;
 
-for (var g = 0; g < 50; g += 1) {
-    map.grass.push({height: Math.round(random(2, 4))*2, width: 4, x: (g*2-50)*10});
-}
 for (var cl = 0; cl < 20; cl += 1) {
     map.clouds.push({x: random(-2000, 2000), y: random(200, 500), op: random(2, 7)/10, s: random(100, 300), sp: random(1, 30)/10});
 }
